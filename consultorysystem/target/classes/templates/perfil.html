@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/logo.ico">
+    <title>Jesús Esperanza de Vida</title>
+    <script src="https://kit.fontawesome.com/92d071fbe5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div class="p-5 h-screen flex justify-center items-center">
+    <div class="p-5 bg-pink-200 rounded-2xl">
+        <form action="/updatePacienteDetails" method="post" autocomplete="off" class="flex flex-col gap-5">
+            <input type="hidden" name="id" th:value="${pac.pac_id}">
+
+            <div class="py-2 px-4 bg-pink-500 text-white rounded-lg">
+                <h2 class="text-2xl text-center">Ahora Completa todos tus datos!</h2>
+            </div>
+
+            <div class="flex gap-5">
+                <div class="p-5 flex flex-col items-center justify-center gap-2.5 rounded bg-white">
+                    <img class="w-[150px] h-[150px] rounded-full" src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Foto de perfil" />
+                    <div class="flex flex-col gap-1">
+                        <div>
+                            <i class="fa-solid fa-id-card"></i>
+                            <label>Link de perfil</label>
+                        </div>
+                        <input type="text" minlength="8" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_photo" th:value="${pac.pac_photo}" />
+                    </div>
+                </div>
+
+                <div class="p-5 flex gap-2 rounded bg-white">
+                    <div class="p-5 flex flex-col gap-2 rounded bg-white">
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-id-card"></i>
+                                <label>DNI</label>
+                            </div>
+                            <input type="text" minlength="8" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_dni" th:value="${pac.pac_dni}" required />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Usuario</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_user" th:value="${pac.pac_user}" required />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-lock"></i>
+                                <label>Contraseña</label>
+                            </div>
+                            <input type="password" minlength="6" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_pass" th:value="${pac.pac_pass}" required />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Nombres</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_nombres" th:value="${pac.pac_nombres}"/>
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Apellidos</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_apellidos" th:value="${pac.pac_apellidos}" />
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex flex-col gap-2 rounded bg-white">
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Teléfono</label>
+                            </div>
+                            <input type="tel" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_telefono" th:value="${pac.pac_telefono}" />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Celular</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_celular" th:value="${pac.pac_celular}" />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Correo</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_correo" th:value="${pac.pac_correo}" />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Dirección</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_direccion" th:value="${pac.pac_direccion}" />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Sexo</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_sexo" th:value="${pac.pac_sexo}" />
+                        </div>
+
+                        <div class="px-2.5 py-1 bg-pink-100 rounded-lg">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <label>Estado civil</label>
+                            </div>
+                            <input type="text" minlength="4" class="bg-gray-200 rounded px-2 py-1" autocomplete="off" name="pac_estadocivil" th:value="${pac.pac_estadocivil}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Guardar los datos!" class="px-5 py-2 bg-pink-500 text-white font-bold rounded-lg" />
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
