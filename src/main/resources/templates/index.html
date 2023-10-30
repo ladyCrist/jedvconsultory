@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio - Jesús Esperanza de Vida</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/logo.png" type="image/svg+xml">
+  <!-- Custom css link -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <ul class="contact-list">
+          <li class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="mailto:jesusesperanzadevida@gmail.com" class="contact-link">jesusesperanzadevida@gmail.com</a>
+          </li>
+
+          <li class="contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <a href="tel:+51992543354" target="_blank" rel="noreferrer" class="contact-link">+51 992 543 354</a>
+          </li>
+        </ul>
+
+        <ul class="social-list">
+          <li>
+            <a href="https://www.facebook.com/consultoriojedevida/" target="_blank" rel="noreferrer"
+              class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header-bottom" data-header>
+      <div class="container">
+        <!-- Logo -->
+        <a class="logo" th:href="@{/}">
+          <img class="logo-image" src="./images/logo.png" alt="logo" width="50" height="50" />
+          <div class="logo-banner">
+            <p class="logo-title">Jesús Esperanza de Vida</p>
+            <small>Consultorio Médico Obstétrico</small>
+          </div>
+        </a>
+
+        <!-- Menu -->
+        <nav class="navbar container" data-navbar>
+          <ul class="navbar-list">
+            <li><a href="#home" class="navbar-link" data-nav-link>Inicio</a></li>
+            <li><a href="#service" class="navbar-link" data-nav-link>Servicios</a></li>
+            <li><a href="#about" class="navbar-link" data-nav-link>Nosotros</a></li>
+            <li><a href="#blog" class="navbar-link" data-nav-link>Blog</a></li>
+            <li><a th:href="@{/contacto}" class="navbar-link" data-nav-link>Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a th:href="@{/login}" class="login-link"><ion-icon name="person"></ion-icon>
+          <p>Iniciar sesión</p>
+        </a>
+
+        <!-- Menu Toggler -->
+        <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+          <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
+          <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- HERO BANNER -->
+      <section class="section hero" id="home" style="background-image: url('./images/hero-bg.png')" aria-label="hero">
+        <div class="container">
+          <div class="hero-content">
+            <p class="section-subtitle">Bienvenido a Jesús Esperanza de Vida</p>
+            <h1 class="h1 hero-title">Bienestar para una mujer como tú</h1>
+            <p class="hero-text">
+              Nos destacamos en el cuidado de la salud femenina con atención de alta calidad y un enfoque centrado en el
+              bienestar.
+              Nuestro compromiso es ser líderes en el cuidado de la salud de las mujeres en todas las etapas de sus
+              vidas.
+            </p>
+
+            <form action="/contacto" class="hero-form">
+              <input type="email" name="email_address" aria-label="email" placeholder="Tu correo electrónico..."
+                required class="email-field">
+              <button type="submit" class="btn">Contáctanos</button>
+            </form>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./images/hero.png" width="587" height="839" alt="hero banner" class="w-100">
+          </figure>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+          <p class="section-subtitle text-center">Nuestros Servicios</p>
+          <h2 class="h2 section-title text-center">Te Ofrecemos...</h2>
+          <ul class="service-list" id="service-list"></ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+          <figure class="about-banner">
+            <img src="./images/nosotros.png" width="470" height="538" loading="lazy" alt="about banner" class="w-100">
+          </figure>
+
+          <div class="about-content">
+            <p class="section-subtitle">Nosotros</p>
+            <h2 class="h2 section-title">Te cuidamos porque te lo mereces</h2>
+            <p class="section-text section-text-1">
+              Somos un equipo apasionado de profesionales de la salud dedicados a brindar atención obstétrica de alta
+              calidad a las
+              mujeres en todas las etapas de su embarazo. Nuestra misión es proporcionar un entorno cálido y acogedor
+              donde las
+              futuras mamás se sientan seguras y respaldadas en este emocionante viaje hacia la maternidad.
+            </p>
+            <p class="section-text">
+              En nuestro consultorio obstétrico, combinamos la experiencia médica con un enfoque centrado en la
+              paciente. Valoramos la
+              comunicación abierta y la atención personalizada, asegurando que cada mujer reciba el cuidado
+              individualizado que
+              merece. Estamos comprometidos con el bienestar de madres y bebés, y estamos aquí para acompañarlas en cada
+              paso del
+              camino.
+            </p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCTOR -->
+      <section class="section doctor" aria-label="doctor">
+        <div class="container">
+          <p class="section-subtitle text-center">Nuestros Doctores</p>
+          <h2 class="h2 section-title text-center">Somos los mejores en el área</h2>
+          <ul class="has-scrollbar" id="obstetras-list"></ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta" aria-label="cta">
+        <div class="container">
+          <figure class="cta-banner">
+            <img src="./images/obstetra-cta.png" width="1056" height="1076" loading="lazy" alt="cta banner"
+              class="w-100">
+          </figure>
+
+          <div class="cta-content">
+            <p class="section-subtitle">Registra tu cita con nosotros!</p>
+            <h2 class="h2 section-title">Estamos abiertos a recibir nuevos pacientes</h2>
+            <a href="#" class="btn">Registrar cita</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+          <p class="section-subtitle text-center">Nuestro Blog</p>
+          <h2 class="h2 section-title text-center">Blog y Novedades</h2>
+          <ul class="blog-list" id="blogs-list"></ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+        <div class="footer-brand">
+          <a class="logo" href="#">
+            <img class="logo-image" src="./images/logo.png" alt="logo" width="50" height="50" />
+            <div class="logo-banner foot">
+              <p class="logo-title">Jesús Esperanza de Vida</p>
+              <small>Consultorio Médico Obstétrico</small>
+            </div>
+          </a>
+
+          <p class="footer-text">
+            Nos destacamos en el cuidado de la salud femenina con atención de alta calidad y un enfoque centrado en el
+            bienestar.
+            Nuestro compromiso es ser líderes en el cuidado de la salud de las mujeres en todas las etapas de sus
+            vidas.
+          </p>
+          <div class="schedule">
+            <div class="schedule-icon">
+              <ion-icon name="time-outline"></ion-icon>
+            </div>
+            <span class="span">
+              Lunes - Sábados:<br>
+              9:00am - 10:00pm
+            </span>
+          </div>
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Otros Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Inicio</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Nosotros</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Servicios</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Proyectos</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Nuestro equipo</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">Último Blog</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Nuestros servicios</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Control Prenatal</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Ecografías</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Parto y Cesárea</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Asesoramiento en Lactancia</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Cuidado Postparto</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+
+              <span class="span">Planificación Familiar</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contáctanos</p>
+          </li>
+
+          <li class="footer-item">
+            <div class="item-icon">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="item-text">
+              Belaúnde 1563 - Jesús<br>
+              Urbanización Aballeneda
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <div class="item-icon">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+51992543354" class="footer-link">+51 992 543 354</a>
+          </li>
+
+          <li class="footer-item">
+            <div class="item-icon">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:jesusesperanzadevida@gmail.com" class="footer-link">jesusesperanzadevida@gmail.com</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 Todos los derechos reservados por Jesús Esperanza de Vida.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/consultoriojedevida/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Botón hacia arriba -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- Javascript -->
+  <script src="./js/components.js"></script>
+  <script src="./js/script.js" defer></script>
+
+  <!-- Link de Iconos -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

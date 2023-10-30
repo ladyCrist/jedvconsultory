@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio - Jesús Esperanza de Vida</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./images/logo.png" type="image/svg+xml">
+
+  <!-- Custom css link -->
+  <link rel="stylesheet" href="./css/login.css">
+
+  <!-- Google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Link de Iconos -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- LOGIN MAIN -->
+  <div class="main-login-register">
+    <div class="box">
+      <div class="inner-box">
+        <div class="forms-wrap">
+          <form action="index.html" autocomplete="off" class="form-login-register sign-in-form">
+            <a class="logo" th:href="@{/}">
+              <img src="./images/logo.png" alt="Jesús Esperanza" />
+              <h4>Jesús Esperanza de Vida</h4>
+            </a>
+
+            <div class="heading">
+              <h2>Bienvenido a Jesús Esperanza de Vida</h2>
+              <h6>¿Todavía no estás registrado?</h6>
+              <a href="#" class="toggle">Regístrate</a>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <!--<ion-icon name="person-outline"></ion-icon>-->
+                <input type="text" minlength="4" class="input-field" autocomplete="off" required />
+                <label for="usuario">Usuario</label>
+              </div>
+
+              <div class="input-wrap">
+                <!--<ion-icon name="key-outline"></ion-icon>-->
+                <input type="password" minlength="6" class="input-field pass" autocomplete="off" required />
+                <label>Contraseña</label>
+                <!--<ion-icon name="eye-outline show-hidden"></ion-icon>-->
+              </div>
+
+              <input type="submit" value="Ingresa ahora" class="sign-btn" />
+
+              <p class="text">
+                Te olvidaste las credenciales de tu cuenta?
+                <a href="#">Obtén ayuda</a> Registrándote ahora
+              </p>
+            </div>
+          </form>
+
+          <form method="post" th:action="@{/paciente/registrar}" autocomplete="off" class="form-login-register sign-up-form">
+
+            <div class="heading">
+              <h2>Registrate en Jesús Esperanza de Vida</h2>
+              <h6>¿Ya tienes una cuenta?</h6>
+              <a href="#" class="toggle">Ingresa ahora</a>
+            </div>
+
+            <div class="actual-form">
+              <div class="input-wrap">
+                <!--<ion-icon name="id-card-outline"></ion-icon>-->
+                <input type="text" id="dni" name="dni" minlength="8" maxlength="8" class="input-field" autocomplete="off" required />
+                <label for="dni">DNI</label>
+              </div>
+
+              <div class="input-wrap">
+                <!--<ion-icon name="person-outline"></ion-icon>-->
+                <input type="text" id="usuario" name="usuario" class="input-field" autocomplete="off" required />
+                <label for="usuario">Usuario</label>
+              </div>
+
+              <div class="input-wrap">
+                <!--<ion-icon name="key-outline"></ion-icon>-->
+                <input type="password" id="clave_secreta" name="clave_secreta" minlength="6" class="input-field pass" autocomplete="off" required />
+                <label for="clave_secreta">Crea una contraseña</label>
+              </div>
+
+              <div class="input-wrap">
+                <!--<ion-icon name="lock-closed-outline"></ion-icon>-->
+                <!--<ion-icon name="eye-outline"></ion-icon>-->
+                <input type="password" minlength="6" class="input-field pass" autocomplete="off" required />
+                <label>Confirma tu contraseña</label>
+                <!--<ion-icon name="eye-outline show-hidden"></ion-icon>-->
+              </div>
+
+              <input type="submit" value="Registrate ahora" class="sign-btn" />
+
+              <p class="text">
+                Al registrarte, Estas deacuerdo con
+                <a href="#">Los términos de servicios</a> y la
+                <a href="#">Política de privacidad</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="carousel">
+          <div class="images-wrapper">
+            <img src="./images/blog-1.png" class="image img-1 show" alt="blog-1.png" />
+            <img src="./images/blog-2.png" class="image img-2" alt="blog-2.png" />
+            <img src="./images/blog-3.png" class="image img-3" alt="blog-3.png" />
+          </div>
+
+          <div class="text-slider">
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>Nuestra atención será lo más preciado para tu vida</h2>
+                <h2>Tenemos a los mejores profesionales en el área para atender de ti</h2>
+                <h2>La mejor tecnología a alcance de tu disposición</h2>
+              </div>
+            </div>
+
+            <div class="bullets">
+              <span class="active"></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="./js/components.js"></script>
+  <script src="./js/script.js" defer></script>
+  <script src="./js/login.js"></script>
+</body>
+
+</html>
